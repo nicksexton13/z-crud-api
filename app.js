@@ -130,5 +130,5 @@ app.delete('/items/:id', async (req, res) => {
 });
 
 app.listen(process.env.PORT || port, () => {
-	console.log(`Your app is running on port ${port}`);
+	console.log(`Your app is running!!`);
 });
