@@ -7,7 +7,7 @@ let connectionstring = process.env.DATABASE_URL;
 
 module.exports = {
 	development: {
-		client: 'postgresql',
+		client: 'pg',
 		connection: connectionstring,
 		// host: '127.0.0.1',
 		// password: 'docker',
@@ -17,7 +17,7 @@ module.exports = {
 	},
 
 	staging: {
-		client: 'postgresql',
+		client: 'pg',
 		connection: {
 			database: 'my_db',
 			user: 'username',
@@ -33,7 +33,7 @@ module.exports = {
 	},
 
 	production: {
-		client: 'postgresql',
+		client: 'pg',
 		connection: {
 			connectionstring,
 			ssl: { rejectUnauthorized: false },
