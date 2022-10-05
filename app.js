@@ -6,11 +6,12 @@ const knex = require('knex')(
 );
 // var cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
-const e = require('express');
+// const e = require('express');
 //this does a salt and hash
+const apiServer = 'https://z-crud-api.herokuapp.com';
 
 app.use(express.json());
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: apiServer }));
 
 app.get('/items', (req, res) => {
 	return knex('items')
