@@ -9,9 +9,12 @@ const bcrypt = require('bcryptjs');
 // const e = require('express');
 //this does a salt and hash
 const apiServer = 'https://z-crud-api.herokuapp.com';
+let connectionstring = process.env.DATABSE_URL;
 
 app.use(express.json());
-app.use(cors({ credentials: true, origin: apiServer }));
+app.use(
+	cors({ credentials: true, origin: 'https://z-crud-frontend.herokuapp.com' })
+);
 
 app.get('/items', (req, res) => {
 	return knex('items')
@@ -125,6 +128,6 @@ app.delete('/items/:id', async (req, res) => {
 	return results;
 });
 
-app.listen(8080, () => {
-	console.log(`Your app is running on port 8080`);
+app.listen(connectionstring, () => {
+	console.log(`Your app is running on port ${connectionstring}`);
 });
