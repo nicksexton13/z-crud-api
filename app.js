@@ -9,7 +9,8 @@ const bcrypt = require('bcryptjs');
 // const e = require('express');
 //this does a salt and hash
 const apiServer = 'https://z-crud-api.herokuapp.com';
-let connectionstring = process.env.DATABSE_URL;
+// let connectionstring = process.env.DATABSE_URL;
+const port = 8080;
 
 app.use(express.json());
 app.use(
@@ -128,6 +129,6 @@ app.delete('/items/:id', async (req, res) => {
 	return results;
 });
 
-app.listen(connectionstring, () => {
-	console.log(`Your app is running on port ${connectionstring}`);
+app.listen(process.env.PORT || port, () => {
+	console.log(`Your app is running on port ${port}`);
 });
