@@ -1,8 +1,9 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
+require('dotenv').config();
 
-let connectionstring = process.env.DATABSE_URL;
+let connectionstring = process.env.DATABASE_URL;
 
 module.exports = {
 	development: {
