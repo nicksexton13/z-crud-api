@@ -3,12 +3,12 @@
  */
 require('dotenv').config();
 
-let connectionstring = process.env.DATABASE_URL;
+let connectionString = process.env.DATABASE_URL;
 
 module.exports = {
 	development: {
 		client: 'pg',
-		connection: connectionstring,
+		connection: connectionString,
 		// host: '127.0.0.1',
 		// password: 'docker',
 		// user: 'postgres',
