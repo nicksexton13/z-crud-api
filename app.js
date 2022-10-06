@@ -13,7 +13,9 @@ const apiServer = 'https://z-crud-api.herokuapp.com';
 const port = 8080;
 
 app.use(express.json());
-app.use(cors());
+app.use(
+	cors({ credentials: true, origin: 'https://z-crud-frontend.herokuapp.com' })
+);
 
 app.get('/items', (req, res) => {
 	return knex('items')
